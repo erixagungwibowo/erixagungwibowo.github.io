@@ -10,19 +10,21 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            background: url('https://raw.githubusercontent.com/erixagungwibowo/erixagungwibowo.github.io/main/vector_gotong_royong.jpg') no-repeat center center/cover;
             flex-direction: column;
         }
         .gallery {
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
         }
         .photo-container {
             text-align: center;
         }
         .photo {
-            width: 200px;
-            height: 300px;
+            width: 300px;
+            height: 450px;
             overflow: hidden;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -43,37 +45,44 @@
         }
         .description {
             display: none;
-            margin-top: 10px;
-            font-size: 16px;
+            margin-top: 15px;
+            font-size: 18px;
             color: #333;
+        }
+        h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
     </style>
     <script>
         function showDescription(id) {
             let descriptions = document.querySelectorAll('.description');
-            descriptions.forEach(desc => desc.style.display = "none");
-            
-            let desc = document.getElementById(id);
-            desc.style.display = "block";
+            descriptions.forEach(desc => {
+                if (desc.id !== id) {
+                    desc.style.display = "none";
+                }
+            });
+            let selectedDesc = document.getElementById(id);
+            selectedDesc.style.display = selectedDesc.style.display === "block" ? "none" : "block";
         }
     </script>
 </head>
 <body>
     <div class="gallery">
         <div class="photo-container">
-            <h3>Foto Alam</h3>
-            <div class="photo" onclick="showDescription('desc1')"><img src="https://github.com/erixagungwibowo/erixagungwibowo.github.io/blob/main/README.md" alt="Foto 1"></div>
-            <p class="description" id="desc1">Ini adalah foto pemandangan alam yang indah.</p>
+            <h3>Foto 1</h3>
+            <div class="photo" onclick="showDescription('desc1')"><img src="https://raw.githubusercontent.com/erixagungwibowo/erixagungwibowo.github.io/main/IMG_20250224_191259_283.jpg" alt="Foto 1"></div>
+            <p class="description" id="desc1">Ini adalah gambar pertama dari repositori GitHub.</p>
         </div>
         <div class="photo-container">
-            <h3>Foto Kota</h3>
-            <div class="photo" onclick="showDescription('desc2')"><img src="https://source.unsplash.com/random/200x300?city" alt="Foto 2"></div>
-            <p class="description" id="desc2">Gambaran suasana kota di malam hari.</p>
+            <h3>Foto 2</h3>
+            <div class="photo" onclick="showDescription('desc2')"><img src="https://raw.githubusercontent.com/erixagungwibowo/erixagungwibowo.github.io/main/IMG_20250224_191259_283.jpg" alt="Foto 2"></div>
+            <p class="description" id="desc2">Ini adalah gambar kedua dari repositori GitHub.</p>
         </div>
         <div class="photo-container">
-            <h3>Foto Abstrak</h3>
-            <div class="photo" onclick="showDescription('desc3')"><img src="https://source.unsplash.com/random/200x300?abstract" alt="Foto 3"></div>
-            <p class="description" id="desc3">Sebuah foto abstrak dengan warna yang menarik.</p>
+            <h3>Foto 3</h3>
+            <div class="photo" onclick="showDescription('desc3')"><img src="https://raw.githubusercontent.com/erixagungwibowo/erixagungwibowo.github.io/main/IMG_20250224_191259_283.jpg" alt="Foto 3"></div>
+            <p class="description" id="desc3">Ini adalah gambar ketiga dari repositori GitHub.</p>
         </div>
     </div>
 </body>
